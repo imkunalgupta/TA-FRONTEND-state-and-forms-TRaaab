@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(198, 241, 227);
+  line-height: 1.5;
+  text-align: center;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgb(64, 64, 218);
+  color: white;
+}
+
+.steps {
+  background-color: rgb(2, 2, 46);
+  color: white;
+}
+
+.steps:hover {
+  background-color: rgb(58, 58, 92);
+}
+
+.counter {
+  border-radius: 0.2rem;
+  background-color: rgb(32, 102, 32);
+  color: white;
+}
+
+.counter:hover {
+  background-color: rgb(149, 223, 149);
+  color: black;
+}
