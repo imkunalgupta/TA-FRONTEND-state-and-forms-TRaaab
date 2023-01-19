@@ -17,7 +17,9 @@ class App extends React.Component {
             <li>
               <h2
                 onClick={() => {
-                  this.setState({ activeQuestion: i });
+                  this.setState({
+                    activeQuestion: this.state.activeQuestion === i ? null : i,
+                  });
                 }}
               >
                 {que.Q}
