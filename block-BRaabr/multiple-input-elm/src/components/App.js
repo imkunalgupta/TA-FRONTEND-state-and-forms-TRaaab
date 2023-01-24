@@ -1,5 +1,6 @@
 import MultipleInput from './MultipleInput';
-import Validation from 'Validation';
+import Validation from './Validation';
+
 function App() {
   return (
     <>
