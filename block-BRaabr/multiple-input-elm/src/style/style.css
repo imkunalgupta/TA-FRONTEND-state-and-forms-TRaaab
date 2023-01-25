@@ -1,0 +1,42 @@
+body {
+  line-height: 1.5;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+form {
+  width: 500px;
+  box-shadow: 3px 3px 6px 3px rgb(28, 80, 126);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 2rem 5rem;
+}
+input,
+textarea {
+  width: 90%;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.submit {
+  width: 100%;
+  background-color: rgb(20, 151, 233);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+}
+.error {
+  border: 1px solid red;
+  color: red;
+}
+
+span {
+  display: block;
+  color: red;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
