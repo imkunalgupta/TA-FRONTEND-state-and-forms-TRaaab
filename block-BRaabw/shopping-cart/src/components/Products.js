@@ -21,6 +21,7 @@ class Products extends React.Component {
             return true;
           }
         }
+        return null;
       });
     }
 
@@ -45,7 +46,7 @@ class Products extends React.Component {
       <div>
         <div className="products-filter">
           <p>
-            {`${this.props.data.length} Product${
+            {`${products.length} Product${
               this.props.data.length > 1 ? 's' : ''
             } found.`}{' '}
           </p>
@@ -56,7 +57,11 @@ class Products extends React.Component {
         </div>
         <div className="flex wrap">
           {products.map((product) => (
-            <Product {...product} />
+            <Product
+              key={product.id}
+              {...product}
+              handleAddToCart={this.props.handleAddToCart}
+            />
           ))}
         </div>
       </div>
@@ -79,7 +84,9 @@ function Product(props) {
         <h3 className="product-item-price">
           {props.currencyFormat + props.price}
         </h3>
-        <button>Add To Cart</button>
+        <button onClick={() => props.handleAddToCart(props)}>
+          Add To Cart
+        </button>
       </div>
     </div>
   );

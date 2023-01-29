@@ -3,25 +3,36 @@ import React from 'react';
 function CartItem(props) {
   return (
     <div className="cart-item">
-      <img src="/static/products/876661122392077_2.jpg" alt="" width="80" />
+      <img src={`/static/products/${props.sku}_2.jpg`} alt="" width="80" />
       <div className="cart-item-details">
-        <p className="cart-item-name">Sphynx Tie Dye Wine T-Shirt</p>
-        <p>X | Front tie dye</p>
-        <p>print Quantity: 1</p>
+        <p className="cart-item-name">{props.title} Tie Dye Wine T-Shirt</p>
+        <p>
+          {props.availableSizes[0]} | {props.style}
+        </p>
+        <p>Quantity: {props.quantity}</p>
       </div>
       <div className="cart-price">
-        <p className="cart-cross">x</p>
-        <p className="price">$ 19.00</p>
+        <p
+          onClick={() => props.deleteCartItem(props.id)}
+          className="cart-cross"
+        >
+          x
+        </p>
+        <p className="price">{`${props.currencyFormat + props.price}`}</p>
         <div>
-          <Increment />
-          <Decrement />
+          <Increment
+            incrementQuantity={() => props.incrementQuantity(props.id)}
+          />
+          <Decrement
+            decrementQuantity={() => props.decrementQuantity(props.id)}
+          />
         </div>
       </div>
     </div>
   );
 }
 
-function Increment() {
+function Increment(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,6 +40,7 @@ function Increment() {
       viewBox="0 0 24 24"
       stroke="currentColor"
       className="plus-icon"
+      onClick={props.incrementQuantity}
     >
       <path
         strokeLinecap="round"
@@ -39,7 +51,7 @@ function Increment() {
     </svg>
   );
 }
-function Decrement() {
+function Decrement(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -47,6 +59,7 @@ function Decrement() {
       viewBox="0 0 24 24"
       stroke="currentColor"
       className="plus-icon"
+      onClick={props.decrementQuantity}
     >
       <path
         strokeLinecap="round"
