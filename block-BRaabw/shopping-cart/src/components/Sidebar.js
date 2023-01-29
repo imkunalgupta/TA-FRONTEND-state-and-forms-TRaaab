@@ -12,6 +12,7 @@ function Sidebar(props) {
       <div className="flex wrap">
         {uniqueSizes.map((size) => (
           <span
+          key={size}
             onClick={() => props.handleClick(size)}
             className={`size ${selectedSizes.includes(size) ? 'active' : ''}`}
           >
